@@ -126,27 +126,12 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_SignupActionPerformed
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-                  try {
-              Statement stat = conn.createStatement();
-              ResultSet rs;
-              sql = "SELECT * FROM tbl_user WHERE Username='"+Username.getText()+"' AND Password='"+Password.getText()+"'";
-              rs = stat.executeQuery(sql);
-              if(rs.next()){
-                 if(Username.getText().equals(rs.getString("Username")) && Password.getText().equals(rs.getString("Password"))){
-                    JOptionPane.showMessageDialog(null, "Berhasil Login");
-                    new MenuAwal().setVisible(true);
-                     dispose();
-                    }
-                }else{
-                        JOptionPane.showMessageDialog(null, "Username dan Password Salah");
-                    }
-          }catch (Exception e) {
-                JOptionPane.showMessageDialog(this, e.getMessage());
-            }
+        new MenuAwal().setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void AdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdminActionPerformed
-        new AdminMenu().setVisible(true);
+        new AkunAdmin().setVisible(true);
         dispose();
     }//GEN-LAST:event_AdminActionPerformed
 
