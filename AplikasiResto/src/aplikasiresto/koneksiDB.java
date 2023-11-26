@@ -21,7 +21,7 @@ public class koneksiDB {
             }catch(ClassNotFoundException ex){
                 System.out.println("Gagal koneksi" +ex);
             }
-            String url = "jdbc:mysql://localhost:3306/restoran";
+            String url = "jdbc:mysql://localhost/aplikasiresto";
             try{
                 koneksiDB = DriverManager.getConnection(url, "root", "");
                 System.out.println("Berhasil koneksi database");
