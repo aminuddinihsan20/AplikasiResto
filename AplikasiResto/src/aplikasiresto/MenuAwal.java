@@ -44,14 +44,14 @@ public class MenuAwal extends javax.swing.JFrame {
         jLabel2.setText("Silahkan Klik Pesan Makanan Untuk Memesan");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, -1, 20));
 
-        jButton1.setFont(new java.awt.Font("Tw Cen MT", 0, 14)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Tw Cen MT", 1, 18)); // NOI18N
         jButton1.setText("Pesan Makanan");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 250, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 250, -1, 50));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/menu awal.jpg"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 560));
