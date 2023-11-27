@@ -78,7 +78,7 @@ public class AkunAdmin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnloginActionPerformed
-        new Admin().setVisible(true);
+        new AdminMenu().setVisible(true);
         dispose();
     }//GEN-LAST:event_btnloginActionPerformed
 

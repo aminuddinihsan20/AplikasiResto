@@ -4,9 +4,7 @@
  */
 package aplikasiresto;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
+
 import javax.swing.JOptionPane;
 
 /**
@@ -14,8 +12,7 @@ import javax.swing.JOptionPane;
  * @author aminuddin ihsan
  */
 public class Login extends javax.swing.JFrame {
- private final Connection conn=new koneksiDB().connect();
-    String sql;
+
     /**
      * Creates new form MenuAwal
      */
