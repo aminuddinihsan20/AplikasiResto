@@ -1,7 +1,7 @@
 # AplikasiResto
 Tugas Besar Implementasi Perangkat Lunak
 
-jobdesk :
+jobdesck :
 1. Banyu Nur - 3411191099 
   - Pembayaran
   - User Edit Account
