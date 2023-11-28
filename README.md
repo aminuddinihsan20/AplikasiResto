@@ -2,18 +2,18 @@
 Tugas Besar Implementasi Perangkat Lunak
 
 jobdesk :
-1. Aminuddin Ihsan
+1. Banyu Nur - 3411191099 
+  - Pembayaran
+  - User Edit Account
+2. Aminuddin Ihsan - 3411211078
   - login menu
   - menu awal
   - menu sign
-2. Fajar Yudi
+3. Fajar Yudi - 3411211015
   - Kasir
   - Pesan Menu
   - Pesanan Di meja
-3. Zidan
+4. Muhammad Zidan  3411211130
   - Menu edit Makanan
   - Menu Edit Minuman
   - Menu admin
-4. Banyu Nur
-  - Pembayaran
-  - User Edit Account
