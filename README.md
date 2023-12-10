@@ -1,7 +1,7 @@
 # AplikasiResto
 Tugas Besar Implementasi Perangkat Lunak
 
-jobdesk :
+jobdesck :
 1. Banyu Nur - 3411191099 
   - Pembayaran
   - User Edit Account
@@ -12,7 +12,6 @@ jobdesk :
 3. Fajar Yudi - 3411211015
   - Kasir
   - Pesan Menu
-  - Pesan Menu Di meja
 4. Muhammad Zidan  3411211130
   - Menu edit Makanan
   - Menu Edit Minuman
