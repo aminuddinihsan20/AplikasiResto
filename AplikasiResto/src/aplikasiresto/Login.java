@@ -6,13 +6,17 @@ package aplikasiresto;
 
 
 import javax.swing.JOptionPane;
-
+import java.sql.Connection;
+import javax.swing.JOptionPane;
+import java.sql.ResultSet;
+import java.sql.Statement;
 /**
  *
  * @author aminuddin ihsan
  */
 public class Login extends javax.swing.JFrame {
-
+    private final Connection conn=new koneksiDB().connect();
+    String sql;
     /**
      * Creates new form MenuAwal
      */
@@ -118,13 +122,28 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_PasswordActionPerformed
 
     private void SignupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignupActionPerformed
-        new MenuSign().setVisible(true);
-        dispose();
+       
     }//GEN-LAST:event_SignupActionPerformed
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-        new MenuAwal().setVisible(true);
-        dispose();
+             
+          try {
+              Statement stat = conn.createStatement();
+              ResultSet rs;
+              sql = "SELECT * FROM user WHERE Username='"+Username.getText()+"' AND Password='"+Password.getText()+"'";
+              rs = stat.executeQuery(sql);
+              if(rs.next()){
+                 if(Username.getText().equals(rs.getString("Username")) && Password.getText().equals(rs.getString("Password"))){
+                    JOptionPane.showMessageDialog(null, "Berhasil Login");
+                    new MenuAwal().setVisible(true);
+                     dispose();
+                    }
+                }else{
+                        JOptionPane.showMessageDialog(null, "Username dan Password Salah");
+                    }
+          }catch (Exception e) {
+                JOptionPane.showMessageDialog(this, e.getMessage());
+            }
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void AdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdminActionPerformed

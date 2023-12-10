@@ -4,12 +4,17 @@
  */
 package aplikasiresto;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author aminuddin ihsan
  */
 public class MenuSign extends javax.swing.JFrame {
-
+    private final Connection conn=new koneksiDB().connect();
     /**
      * Creates new form MenugSign
      */
@@ -29,8 +34,8 @@ public class MenuSign extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        Username = new javax.swing.JTextField();
+        Password = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         btnBuatAkun = new javax.swing.JButton();
         btnKembali = new javax.swing.JButton();
@@ -53,8 +58,8 @@ public class MenuSign extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Password :");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 240, 70, 20));
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(325, 198, 199, -1));
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(325, 238, 199, -1));
+        getContentPane().add(Username, new org.netbeans.lib.awtextra.AbsoluteConstraints(325, 198, 199, -1));
+        getContentPane().add(Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(325, 238, 199, -1));
 
         jLabel4.setFont(new java.awt.Font("Tw Cen MT", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -85,6 +90,26 @@ public class MenuSign extends javax.swing.JFrame {
 
     private void btnBuatAkunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuatAkunActionPerformed
         // TODO add your handling code here:
+                if(Username.getText().equals("")||Password.getText().equals(""))
+        {
+            JOptionPane.showMessageDialog(null, "Jangan ada data kosong !","Kesalahan", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        String sql = "insert into user values(?,?)";
+        try{
+            PreparedStatement stat = conn.prepareStatement(sql);
+            stat.setString(1, Username.getText());
+            stat.setString(2, Password.getText());
+
+            stat.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Data Berhasil Di Tambah");
+            new Login().setVisible(true);
+            dispose();
+
+        } catch (SQLException e){
+            JOptionPane.showMessageDialog(null, "Data Gagal Disimpan" +e);
+        }
     }//GEN-LAST:event_btnBuatAkunActionPerformed
 
     private void btnKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKembaliActionPerformed
@@ -129,6 +154,8 @@ public class MenuSign extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField Password;
+    private javax.swing.JTextField Username;
     private javax.swing.JButton btnBuatAkun;
     private javax.swing.JButton btnKembali;
     private javax.swing.JLabel jLabel1;
@@ -136,7 +163,5 @@ public class MenuSign extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }
