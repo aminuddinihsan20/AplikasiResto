@@ -96,7 +96,7 @@ public class MenuSign extends javax.swing.JFrame {
             return;
         }
         
-        String sql = "insert into user values(?,?)";
+        String sql = "insert into tb_user values(?,?)";
         try{
             PreparedStatement stat = conn.prepareStatement(sql);
             stat.setString(1, Username.getText());

@@ -4,12 +4,18 @@
  */
 package aplikasiresto;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author aminuddin ihsan
  */
 public class AkunAdmin extends javax.swing.JFrame {
-
+    private final Connection conn=new koneksiDB().connect();
+    String sql;
     /**
      * Creates new form AkunAdmin
      */
@@ -29,8 +35,8 @@ public class AkunAdmin extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        Username = new javax.swing.JTextField();
+        Password = new javax.swing.JTextField();
         btnlogin = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
@@ -45,15 +51,15 @@ public class AkunAdmin extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Tw Cen MT", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Username");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(353, 197, -1, -1));
+        jLabel2.setText("Code  ");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 200, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tw Cen MT", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Password");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(354, 258, -1, -1));
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(296, 224, 198, -1));
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(296, 285, 198, -1));
+        getContentPane().add(Username, new org.netbeans.lib.awtextra.AbsoluteConstraints(296, 224, 198, -1));
+        getContentPane().add(Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(296, 285, 198, -1));
 
         btnlogin.setText("Login");
         btnlogin.addActionListener(new java.awt.event.ActionListener() {
@@ -78,6 +84,23 @@ public class AkunAdmin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnloginActionPerformed
+    try {
+              Statement stat = conn.createStatement();
+              ResultSet rs;
+              sql = "SELECT * FROM tb_admin WHERE Username='"+Username.getText()+"' AND Password='"+Password.getText()+"'";
+              rs = stat.executeQuery(sql);
+              if(rs.next()){
+                 if(Username.getText().equals(rs.getString("Username")) && Password.getText().equals(rs.getString("Password"))){
+                    JOptionPane.showMessageDialog(null, "Berhasil Login");
+                    new AdminMenu().setVisible(true);
+                     dispose();
+                    }
+                }else{
+                        JOptionPane.showMessageDialog(null, "Username dan Password Salah");
+                    }
+          }catch (Exception e) {
+                JOptionPane.showMessageDialog(this, e.getMessage());
+            }
         new AdminMenu().setVisible(true);
         dispose();
     }//GEN-LAST:event_btnloginActionPerformed
@@ -123,13 +146,13 @@ public class AkunAdmin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField Password;
+    private javax.swing.JTextField Username;
     private javax.swing.JButton btnlogin;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }

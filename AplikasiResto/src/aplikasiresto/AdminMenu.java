@@ -53,7 +53,7 @@ public class AdminMenu extends javax.swing.JFrame {
     }
     
     private void autonomor(){
-            String sql = "select max(Kode_Admin) from admin";
+            String sql = "select max(KodeAdmin) from tb_admin";
             try{
                 Statement stat = conn.createStatement();
                 ResultSet rs= stat.executeQuery(sql);
@@ -71,14 +71,14 @@ public class AdminMenu extends javax.swing.JFrame {
             Object[] baris = {"Kode Admin","Nama Admin","No Telpon","Alamat","Username","Password"};
             tabmode = new DefaultTableModel(null, baris);
             tableAdmin.setModel(tabmode);
-            String sql = "select * from admin";
+            String sql = "select * from tb_admin";
             try{
                 Statement stat = conn.createStatement();
                 ResultSet hasil = stat.executeQuery(sql);
                 while(hasil.next()){
-                    String kodeAdmin = hasil.getString("Kode_Admin");
-                    String namaAdmin = hasil.getString("Nama_Admin");
-                    String noTelpAdmin = hasil.getString("No_Telp");
+                    String kodeAdmin = hasil.getString("KodeAdmin");
+                    String namaAdmin = hasil.getString("NamaAdmin");
+                    String noTelpAdmin = hasil.getString("NoTelpAdmin");
                     String alamatAdmin = hasil.getString("Alamat");
                     String userAdmin = hasil.getString("Username");
                     String passAdmin = hasil.getString("Password");
@@ -140,7 +140,6 @@ public class AdminMenu extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         userAdmin = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
@@ -149,6 +148,7 @@ public class AdminMenu extends javax.swing.JFrame {
         Kasir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tableAdmin.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -177,25 +177,35 @@ public class AdminMenu extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tableAdmin);
 
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(294, 60, -1, -1));
+
         jLabel1.setText("Kode Admin");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 63, -1, -1));
 
         kodeAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 kodeAdminActionPerformed(evt);
             }
         });
+        getContentPane().add(kodeAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(129, 60, 107, -1));
 
         jLabel2.setText("Nama Admin");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 103, -1, -1));
 
         namaAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 namaAdminActionPerformed(evt);
             }
         });
+        getContentPane().add(namaAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(129, 100, 107, -1));
 
         jLabel3.setText("No Telpon");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 143, -1, -1));
+        getContentPane().add(noTelpAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(129, 140, 107, -1));
 
         jLabel4.setText("Alamat");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 183, -1, -1));
+        getContentPane().add(alamatAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(129, 180, 107, -1));
 
         tombolBuat.setText("Buat");
         tombolBuat.addActionListener(new java.awt.event.ActionListener() {
@@ -203,6 +213,7 @@ public class AdminMenu extends javax.swing.JFrame {
                 tombolBuatActionPerformed(evt);
             }
         });
+        getContentPane().add(tombolBuat, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 303, -1, -1));
 
         tombolUbah.setText("Ubah");
         tombolUbah.addActionListener(new java.awt.event.ActionListener() {
@@ -210,6 +221,7 @@ public class AdminMenu extends javax.swing.JFrame {
                 tombolUbahActionPerformed(evt);
             }
         });
+        getContentPane().add(tombolUbah, new org.netbeans.lib.awtextra.AbsoluteConstraints(126, 303, -1, -1));
 
         tombolHapus.setText("Hapus");
         tombolHapus.addActionListener(new java.awt.event.ActionListener() {
@@ -217,6 +229,7 @@ public class AdminMenu extends javax.swing.JFrame {
                 tombolHapusActionPerformed(evt);
             }
         });
+        getContentPane().add(tombolHapus, new org.netbeans.lib.awtextra.AbsoluteConstraints(216, 303, -1, -1));
 
         jButton1.setText("Minuman");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -224,8 +237,10 @@ public class AdminMenu extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 439, -1, -1));
 
         jLabel5.setText("Tombol Navigasi Database");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 408, -1, -1));
 
         jButton2.setText("Makanan");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -233,6 +248,7 @@ public class AdminMenu extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 440, -1, -1));
 
         jButton4.setText("User");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -240,17 +256,15 @@ public class AdminMenu extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-
-        jButton5.setText("Pembayaran");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 480, -1, -1));
 
         jLabel6.setText("Username");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 223, -1, -1));
+        getContentPane().add(userAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(129, 220, 107, -1));
 
         jLabel7.setText("Password");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 263, -1, -1));
+        getContentPane().add(passAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(129, 260, 107, -1));
 
         jButton7.setText("Logout");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
@@ -258,6 +272,7 @@ public class AdminMenu extends javax.swing.JFrame {
                 jButton7ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(684, 19, -1, -1));
 
         Kasir.setText("Kasir");
         Kasir.addActionListener(new java.awt.event.ActionListener() {
@@ -265,128 +280,7 @@ public class AdminMenu extends javax.swing.JFrame {
                 KasirActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel1)
-                                            .addComponent(jLabel2))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addGap(0, 0, Short.MAX_VALUE)
-                                        .addComponent(jLabel4)
-                                        .addGap(47, 47, 47)))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(kodeAdmin)
-                                    .addComponent(namaAdmin)
-                                    .addComponent(noTelpAdmin)
-                                    .addComponent(alamatAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(58, 58, 58))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(tombolBuat)
-                                        .addGap(26, 26, 26)
-                                        .addComponent(tombolUbah)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(tombolHapus))
-                                    .addComponent(jLabel3)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel7)
-                                            .addComponent(jLabel6))
-                                        .addGap(48, 48, 48)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(userAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(passAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(9, 9, 9)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jButton4)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jButton2))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGap(33, 33, 33)
-                                                .addComponent(jLabel5))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jButton1)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(jButton5)))))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton7)))
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(90, 90, 90)
-                .addComponent(Kasir)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(jButton7)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(kodeAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(namaAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(noTelpAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(alamatAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel6)
-                            .addComponent(userAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel7)
-                            .addComponent(passAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(21, 21, 21)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(tombolBuat)
-                            .addComponent(tombolUbah)
-                            .addComponent(tombolHapus))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
-                        .addComponent(jLabel5)
-                        .addGap(15, 15, 15)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton1)
-                            .addComponent(jButton5))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton4)
-                            .addComponent(jButton2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Kasir)
-                        .addGap(83, 83, 83))))
-        );
+        getContentPane().add(Kasir, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 480, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -406,7 +300,7 @@ public class AdminMenu extends javax.swing.JFrame {
             return;
         }
         
-        String sql = "insert into admin values(?,?,?,?,?,?)";
+        String sql = "insert into tb_admin values(?,?,?,?,?,?)";
         try{
             PreparedStatement stat = conn.prepareStatement(sql);
             stat.setString(1, kodeAdmin.getText());
@@ -419,7 +313,7 @@ public class AdminMenu extends javax.swing.JFrame {
             stat.executeUpdate();
             JOptionPane.showMessageDialog(null, "Data Berhasil Di Tambah");
 
-            //jamJP.requestFocus();
+ 
             datatabel();
             perataan();
             lebarKolom();
@@ -497,11 +391,6 @@ public class AdminMenu extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        new Pembayaran().setVisible(true);
-        dispose();
-    }//GEN-LAST:event_jButton5ActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         new EditMinuman().setVisible(true);
         dispose();
@@ -569,7 +458,6 @@ public class AdminMenu extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

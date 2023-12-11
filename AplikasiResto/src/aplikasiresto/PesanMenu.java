@@ -106,18 +106,18 @@ public class PesanMenu extends javax.swing.JFrame {
             Object[] baris = {"Kode Pesan","Menu","Harga","Jumlah"};
             tabmode = new DefaultTableModel(null, baris);
             tablePesan.setModel(tabmode);
-            String sql = "select * from pesanmenu";
+            String sql = "select * from tb_pesanmenu";
             try{
                 Statement stat = conn.createStatement();
                 ResultSet hasil = stat.executeQuery(sql);
                 while(hasil.next()){
                     String kodePesan = hasil.getString("kodePesan");
-                    String nama = hasil.getString("nama");
-                    String harga = hasil.getString("harga");
-                    String jumlah = hasil.getString("jumlah");
+                    String namaMenu = hasil.getString("namaMenu");
+                    String hargaMenu = hasil.getString("hargaMenu");
+                    String jumlahMenu = hasil.getString("jumlahMenu");
 
 
-                    String[] data = {kodePesan,nama,harga,jumlah};
+                    String[] data = {kodePesan,namaMenu,hargaMenu,jumlahMenu};
                     tabmode.addRow(data);
                 } 
             }   catch (SQLException ex) {
@@ -190,11 +190,10 @@ public class PesanMenu extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
         tableMenuMakanan = new javax.swing.JTable();
-        Buat = new javax.swing.JButton();
+        Pesan = new javax.swing.JButton();
         Ubah = new javax.swing.JButton();
         Hapus = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
         jumlahMenu = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         kodePesan = new javax.swing.JTextField();
@@ -292,10 +291,10 @@ public class PesanMenu extends javax.swing.JFrame {
         });
         jScrollPane4.setViewportView(tableMenuMakanan);
 
-        Buat.setText("Buat");
-        Buat.addActionListener(new java.awt.event.ActionListener() {
+        Pesan.setText("Pesan");
+        Pesan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BuatActionPerformed(evt);
+                PesanActionPerformed(evt);
             }
         });
 
@@ -314,13 +313,6 @@ public class PesanMenu extends javax.swing.JFrame {
         });
 
         jLabel1.setText("Jumlah");
-
-        jButton5.setText("Pesan");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
 
         jumlahMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -341,7 +333,7 @@ public class PesanMenu extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(Buat))
+                                .addComponent(Pesan))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel3)
@@ -355,7 +347,6 @@ public class PesanMenu extends javax.swing.JFrame {
                                 .addComponent(Ubah)
                                 .addGap(18, 18, 18)
                                 .addComponent(Hapus))
-                            .addComponent(jButton5)
                             .addComponent(jumlahMenu))
                         .addGap(79, 79, 79)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 342, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -404,11 +395,9 @@ public class PesanMenu extends javax.swing.JFrame {
                                     .addComponent(jumlahMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(24, 24, 24)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(Buat)
+                                    .addComponent(Pesan)
                                     .addComponent(Ubah)
-                                    .addComponent(Hapus))
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton5)))
+                                    .addComponent(Hapus))))
                         .addGap(30, 30, 30))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -437,7 +426,7 @@ public class PesanMenu extends javax.swing.JFrame {
 
     private void UbahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UbahActionPerformed
 // TODO add your handling code here:
-        String sql = "update pesanmenu set nama=?, harga=?, jumlah=? where kodePesan= "+kodePesan.getText()+"";
+        String sql = "update tb_pesanmenu set namaMenu=?, hargaMenu=?, jumlahMenu=? where kodePesan= "+kodePesan.getText()+"";
         
         try {
             PreparedStatement stat = conn.prepareStatement(sql);
@@ -457,18 +446,14 @@ public class PesanMenu extends javax.swing.JFrame {
         }        // TODO add your handling code here:
     }//GEN-LAST:event_UbahActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void BuatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuatActionPerformed
+    private void PesanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PesanActionPerformed
         if(kodePesan.getText().equals("")||namaMenu.getText().equals("")||hargaMenu.getText().equals("")||jumlahMenu.getText().equals(""))
         {
             JOptionPane.showMessageDialog(null, "Jangan ada data kosong !","Kesalahan", JOptionPane.ERROR_MESSAGE);
             return;
         }
         
-        String sql = "insert into pesanmenu values(?,?,?,?)";
+        String sql = "insert into tb_pesanmenu values(?,?,?,?)";
         try{
             PreparedStatement stat = conn.prepareStatement(sql);
             stat.setString(1, kodePesan.getText());
@@ -487,7 +472,7 @@ public class PesanMenu extends javax.swing.JFrame {
         } catch (SQLException e){
             JOptionPane.showMessageDialog(null, "Data Gagal Disimpan" +e);
         }        // TODO add your handling code here:
-    }//GEN-LAST:event_BuatActionPerformed
+    }//GEN-LAST:event_PesanActionPerformed
 
     private void namaMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_namaMenuActionPerformed
         // TODO add your handling code here:
@@ -505,7 +490,7 @@ public class PesanMenu extends javax.swing.JFrame {
 int ok = JOptionPane.showConfirmDialog(null, "Apakah ada yakin ingin menghapus data", "Konfirmasi Dialog",
             JOptionPane.YES_NO_OPTION);
         if(ok==0){
-            String sql = "delete from pesanmenu where kodePesan='"+kodePesan.getText()+"'";
+            String sql = "delete from tb_pesanmenu where kodePesan='"+kodePesan.getText()+"'";
             try {
                 PreparedStatement stat = conn.prepareStatement(sql);
                 stat.executeUpdate();
@@ -538,12 +523,11 @@ int ok = JOptionPane.showConfirmDialog(null, "Apakah ada yakin ingin menghapus d
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Buat;
     private javax.swing.JButton Hapus;
+    private javax.swing.JButton Pesan;
     private javax.swing.JButton Ubah;
     private javax.swing.JTextField hargaMenu;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

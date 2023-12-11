@@ -30,7 +30,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              <Component id="Buat" min="-2" max="-2" attributes="0"/>
+                              <Component id="Pesan" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -49,7 +49,6 @@
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="Hapus" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jButton5" min="-2" max="-2" attributes="0"/>
                           <Component id="jumlahMenu" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
@@ -112,12 +111,10 @@
                               </Group>
                               <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="Buat" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Pesan" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="Ubah" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="Hapus" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jButton5" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
@@ -289,12 +286,12 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="Buat">
+    <Component class="javax.swing.JButton" name="Pesan">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Buat"/>
+        <Property name="text" type="java.lang.String" value="Pesan"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BuatActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PesanActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="Ubah">
@@ -317,14 +314,6 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Jumlah"/>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="jButton5">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Pesan"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton5ActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="jumlahMenu">
       <Events>

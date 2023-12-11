@@ -123,7 +123,6 @@ public class EditMakanan extends javax.swing.JFrame {
         namaMakanan = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         hargaMakanan = new javax.swing.JTextField();
-        jButton5 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         stokMakanan = new javax.swing.JTextField();
         jButton7 = new javax.swing.JButton();
@@ -161,13 +160,6 @@ public class EditMakanan extends javax.swing.JFrame {
         });
 
         jLabel3.setText("Harga");
-
-        jButton5.setText("Pembayaran");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
 
         jLabel4.setText("Stok Makanan");
 
@@ -265,14 +257,11 @@ public class EditMakanan extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(16, 16, 16)
                                 .addComponent(jButton1)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton5))
+                                .addGap(36, 36, 36)
+                                .addComponent(Kasir))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(66, 66, 66)
-                                .addComponent(jLabel5))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(77, 77, 77)
-                                .addComponent(Kasir)))
+                                .addComponent(jLabel5)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)))
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(23, 23, 23))
@@ -311,10 +300,8 @@ public class EditMakanan extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton1)
-                            .addComponent(jButton5))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Kasir)
-                        .addGap(110, 110, 110))
+                            .addComponent(Kasir))
+                        .addGap(139, 139, 139))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jButton7)
                         .addGap(18, 18, 18)
@@ -337,11 +324,6 @@ public class EditMakanan extends javax.swing.JFrame {
     private void namaMakananActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_namaMakananActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_namaMakananActionPerformed
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        new Pembayaran().setVisible(true);
-        dispose();
-    }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         int pesan = JOptionPane.showConfirmDialog(null, "Yakin akan log out?", "Konfirmasi", JOptionPane.YES_NO_OPTION,
@@ -485,7 +467,6 @@ public class EditMakanan extends javax.swing.JFrame {
     private javax.swing.JButton Kasir;
     private javax.swing.JTextField hargaMakanan;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

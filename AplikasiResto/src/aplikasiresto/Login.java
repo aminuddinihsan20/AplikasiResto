@@ -122,7 +122,8 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_PasswordActionPerformed
 
     private void SignupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignupActionPerformed
-       
+       new MenuSign().setVisible(true);
+       dispose();
     }//GEN-LAST:event_SignupActionPerformed
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
@@ -130,7 +131,7 @@ public class Login extends javax.swing.JFrame {
           try {
               Statement stat = conn.createStatement();
               ResultSet rs;
-              sql = "SELECT * FROM user WHERE Username='"+Username.getText()+"' AND Password='"+Password.getText()+"'";
+              sql = "SELECT * FROM tb_user WHERE Username='"+Username.getText()+"' AND Password='"+Password.getText()+"'";
               rs = stat.executeQuery(sql);
               if(rs.next()){
                  if(Username.getText().equals(rs.getString("Username")) && Password.getText().equals(rs.getString("Password"))){
@@ -144,6 +145,8 @@ public class Login extends javax.swing.JFrame {
           }catch (Exception e) {
                 JOptionPane.showMessageDialog(this, e.getMessage());
             }
+           new MenuAwal().setVisible(true);
+                     dispose();
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void AdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdminActionPerformed
