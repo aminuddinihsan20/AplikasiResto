@@ -136,6 +136,7 @@ public class EditMinuman extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
+        Kasir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -262,6 +263,14 @@ public class EditMinuman extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 30, -1, -1));
+
+        Kasir.setText("Kasir");
+        Kasir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                KasirActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Kasir, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 410, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -391,6 +400,12 @@ public class EditMinuman extends javax.swing.JFrame {
         }   
     }//GEN-LAST:event_jButton7ActionPerformed
 
+    private void KasirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KasirActionPerformed
+        // TODO add your handling code here:
+        new Kasir().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_KasirActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -434,6 +449,7 @@ public class EditMinuman extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Kasir;
     private javax.swing.JTextField hargaMinuman;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;

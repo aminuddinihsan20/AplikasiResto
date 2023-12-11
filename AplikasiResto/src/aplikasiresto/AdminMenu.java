@@ -146,6 +146,7 @@ public class AdminMenu extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         passAdmin = new javax.swing.JTextField();
         jButton7 = new javax.swing.JButton();
+        Kasir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -258,6 +259,13 @@ public class AdminMenu extends javax.swing.JFrame {
             }
         });
 
+        Kasir.setText("Kasir");
+        Kasir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                KasirActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -321,6 +329,10 @@ public class AdminMenu extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jButton7)))
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(90, 90, 90)
+                .addComponent(Kasir)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -371,7 +383,9 @@ public class AdminMenu extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton4)
                             .addComponent(jButton2))
-                        .addGap(112, 112, 112))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Kasir)
+                        .addGap(83, 83, 83))))
         );
 
         pack();
@@ -508,6 +522,12 @@ public class AdminMenu extends javax.swing.JFrame {
         }    
     }//GEN-LAST:event_jButton7ActionPerformed
 
+    private void KasirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KasirActionPerformed
+        // TODO add your handling code here:
+        new Kasir().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_KasirActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -544,6 +564,7 @@ public class AdminMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Kasir;
     private javax.swing.JTextField alamatAdmin;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
