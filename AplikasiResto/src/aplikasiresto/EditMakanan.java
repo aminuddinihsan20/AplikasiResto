@@ -121,7 +121,6 @@ public class EditMakanan extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         namaMakanan = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         hargaMakanan = new javax.swing.JTextField();
         jButton5 = new javax.swing.JButton();
@@ -157,13 +156,6 @@ public class EditMakanan extends javax.swing.JFrame {
         namaMakanan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 namaMakananActionPerformed(evt);
-            }
-        });
-
-        jButton3.setText("Kasir");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
             }
         });
 
@@ -277,10 +269,7 @@ public class EditMakanan extends javax.swing.JFrame {
                                         .addComponent(jButton5))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(94, 94, 94)
-                                        .addComponent(jLabel5))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(97, 97, 97)
-                                        .addComponent(jButton3)))
+                                        .addComponent(jLabel5)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
@@ -318,9 +307,7 @@ public class EditMakanan extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton1)
-                            .addComponent(jButton5))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton3))
+                            .addComponent(jButton5)))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
@@ -340,11 +327,6 @@ public class EditMakanan extends javax.swing.JFrame {
     private void namaMakananActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_namaMakananActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_namaMakananActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        new Kasir().setVisible(true);
-        dispose();
-    }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         new Pembayaran().setVisible(true);
@@ -486,7 +468,6 @@ public class EditMakanan extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField hargaMakanan;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
