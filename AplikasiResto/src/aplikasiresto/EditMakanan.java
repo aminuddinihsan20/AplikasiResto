@@ -55,7 +55,7 @@ public class EditMakanan extends javax.swing.JFrame {
     }
     
     private void autonomor(){
-            String sql = "select max(Kode_Makanan) from makanan";
+            String sql = "select max(kodeMakanan) from makanan";
             try{
                 Statement stat = conn.createStatement();
                 ResultSet rs= stat.executeQuery(sql);
@@ -77,10 +77,10 @@ public class EditMakanan extends javax.swing.JFrame {
                 Statement stat = conn.createStatement();
                 ResultSet hasil = stat.executeQuery(sql);
                 while(hasil.next()){
-                    String kodeMakanan = hasil.getString("Kode_Makanan");
+                    String kodeMakanan = hasil.getString("KodeMakanan");
                     String namaMakanan = hasil.getString("Nama_Makanan");
                     String hargaMakanan = hasil.getString("Harga");
-                    String stokMakanan = hasil.getString("Stok_Makanan");
+                    String stokMakanan = hasil.getString("StokMakanan");
 
 
                     String[] data = {kodeMakanan,namaMakanan,hargaMakanan,stokMakanan};
@@ -379,7 +379,7 @@ public class EditMakanan extends javax.swing.JFrame {
 
     private void tombolUbahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tombolUbahActionPerformed
         // TODO add your handling code here:
-        String sql = "update makanan set Nama_Makanan=?, Harga=?, Stok_Makanan=? where Kode_Makanan= "+kodeMakanan.getText()+"";
+        String sql = "update makanan set Nama_Makanan=?, Harga=?, StokMakanan=? where kodeMakanan= "+kodeMakanan.getText()+"";
 
         try {
             PreparedStatement stat = conn.prepareStatement(sql);
@@ -404,7 +404,7 @@ public class EditMakanan extends javax.swing.JFrame {
         int ok = JOptionPane.showConfirmDialog(null, "Apakah ada yakin ingin menghapus data", "Konfirmasi Dialog",
             JOptionPane.YES_NO_OPTION);
         if(ok==0){
-            String sql = "delete from makanan where Kode_Makanan='"+kodeMakanan.getText()+"'";
+            String sql = "delete from makanan where kodeMakanan='"+kodeMakanan.getText()+"'";
             try {
                 PreparedStatement stat = conn.prepareStatement(sql);
                 stat.executeUpdate();

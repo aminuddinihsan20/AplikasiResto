@@ -201,7 +201,7 @@ public class User extends javax.swing.JFrame {
             return;
         }
         
-        String sql = "insert into user values(?,?)";
+        String sql = "insert into tb_user values(?,?)";
         try{
             PreparedStatement stat = conn.prepareStatement(sql);
             stat.setString(1, username.getText());
@@ -222,7 +222,7 @@ public class User extends javax.swing.JFrame {
 
     private void tombolUbahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tombolUbahActionPerformed
         // TODO add your handling code here:
-        String sql = "update user set Password=? where Username= "+username.getText()+"";
+        String sql = "update tb_user set Password=? where Username= "+username.getText()+"";
         
         try {
             PreparedStatement stat = conn.prepareStatement(sql);
@@ -244,7 +244,7 @@ public class User extends javax.swing.JFrame {
         int ok = JOptionPane.showConfirmDialog(null, "Apakah ada yakin ingin menghapus data", "Konfirmasi Dialog",
             JOptionPane.YES_NO_OPTION);
         if(ok==0){
-            String sql = "delete from user where Username='"+username.getText()+"'";
+            String sql = "delete from tb_user where Username='"+username.getText()+"'";
             try {
                 PreparedStatement stat = conn.prepareStatement(sql);
                 stat.executeUpdate();
