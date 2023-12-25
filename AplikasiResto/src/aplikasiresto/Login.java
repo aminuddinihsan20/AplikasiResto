@@ -145,8 +145,6 @@ public class Login extends javax.swing.JFrame {
           }catch (Exception e) {
                 JOptionPane.showMessageDialog(this, e.getMessage());
             }
-           new MenuAwal().setVisible(true);
-                     dispose();
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void AdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdminActionPerformed
