@@ -53,7 +53,7 @@ public class User extends javax.swing.JFrame {
             Object[] baris = {"Username","Password"};
             tabmode = new DefaultTableModel(null, baris);
             tableUser.setModel(tabmode);
-            String sql = "select * from user";
+            String sql = "select * from tb_user";
             try{
                 Statement stat = conn.createStatement();
                 ResultSet hasil = stat.executeQuery(sql);
@@ -308,6 +308,12 @@ public class User extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(User.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
