@@ -139,13 +139,13 @@ public class AdminMenu extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         userAdmin = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         passAdmin = new javax.swing.JTextField();
         jButton7 = new javax.swing.JButton();
         Kasir = new javax.swing.JButton();
+        User = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -231,7 +231,7 @@ public class AdminMenu extends javax.swing.JFrame {
         });
         getContentPane().add(tombolHapus, new org.netbeans.lib.awtextra.AbsoluteConstraints(216, 303, -1, -1));
 
-        jButton1.setText("Minuman");
+        jButton1.setText("Menu Minuman");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -239,24 +239,16 @@ public class AdminMenu extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 439, -1, -1));
 
-        jLabel5.setText("Tombol Navigasi Database");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 408, -1, -1));
+        jLabel5.setText("Tombol Navigasi ");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 410, -1, 20));
 
-        jButton2.setText("Makanan");
+        jButton2.setText("Menu Makanan");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 440, -1, -1));
-
-        jButton4.setText("User");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 480, -1, -1));
 
         jLabel6.setText("Username");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 223, -1, -1));
@@ -280,7 +272,15 @@ public class AdminMenu extends javax.swing.JFrame {
                 KasirActionPerformed(evt);
             }
         });
-        getContentPane().add(Kasir, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 480, -1, -1));
+        getContentPane().add(Kasir, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 480, -1, -1));
+
+        User.setText("User");
+        User.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UserActionPerformed(evt);
+            }
+        });
+        getContentPane().add(User, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 480, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -396,11 +396,6 @@ public class AdminMenu extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        new User().setVisible(true);
-        dispose();
-    }//GEN-LAST:event_jButton4ActionPerformed
-
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         int pesan = JOptionPane.showConfirmDialog(null, "Yakin akan log out?", "Konfirmasi", JOptionPane.YES_NO_OPTION,
                 JOptionPane.QUESTION_MESSAGE);
@@ -416,6 +411,12 @@ public class AdminMenu extends javax.swing.JFrame {
         new Kasir().setVisible(true);
         dispose();
     }//GEN-LAST:event_KasirActionPerformed
+
+    private void UserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UserActionPerformed
+        // TODO add your handling code here:
+        new User().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_UserActionPerformed
 
     /**
      * @param args the command line arguments
@@ -454,10 +455,10 @@ public class AdminMenu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Kasir;
+    private javax.swing.JButton User;
     private javax.swing.JTextField alamatAdmin;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
