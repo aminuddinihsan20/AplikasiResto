@@ -227,8 +227,8 @@ public class EditMinuman extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(58, 333, -1, -1));
 
-        jLabel5.setText("Tombol Navigasi Database");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 302, -1, -1));
+        jLabel5.setText("Tombol Navigasi ");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, -1, -1));
 
         jButton2.setText("Admin");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
