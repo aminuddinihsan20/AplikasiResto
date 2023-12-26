@@ -1,5 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
+* To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
@@ -10,7 +10,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.text.SimpleDateFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -146,6 +145,7 @@ public class AdminMenu extends javax.swing.JFrame {
         jButton7 = new javax.swing.JButton();
         Kasir = new javax.swing.JButton();
         User = new javax.swing.JButton();
+        pembayaranBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -282,6 +282,14 @@ public class AdminMenu extends javax.swing.JFrame {
         });
         getContentPane().add(User, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 480, -1, -1));
 
+        pembayaranBtn.setText("Pembayaran");
+        pembayaranBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pembayaranBtnActionPerformed(evt);
+            }
+        });
+        getContentPane().add(pembayaranBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(103, 521, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -325,7 +333,7 @@ public class AdminMenu extends javax.swing.JFrame {
 
     private void tombolUbahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tombolUbahActionPerformed
         // TODO add your handling code here:
-        String sql = "update admin set Nama_Admin=?, No_Telp=?, Alamat=?, Username=?, Password =? where Kode_Admin= "+kodeAdmin.getText()+"";
+        String sql = "update tb_admin set Nama_Admin=?, No_Telp=?, Alamat=?, Username=?, Password =? where Kode_Admin= "+kodeAdmin.getText()+"";
         
         try {
             PreparedStatement stat = conn.prepareStatement(sql);
@@ -472,6 +480,7 @@ public class AdminMenu extends javax.swing.JFrame {
     private javax.swing.JTextField namaAdmin;
     private javax.swing.JTextField noTelpAdmin;
     private javax.swing.JTextField passAdmin;
+    private javax.swing.JButton pembayaranBtn;
     private javax.swing.JTable tableAdmin;
     private javax.swing.JButton tombolBuat;
     private javax.swing.JButton tombolHapus;
