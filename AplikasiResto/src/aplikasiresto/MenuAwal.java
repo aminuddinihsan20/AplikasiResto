@@ -46,7 +46,7 @@ public class MenuAwal extends javax.swing.JFrame {
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, -1, 20));
 
         jButton1.setFont(new java.awt.Font("Tw Cen MT", 1, 18)); // NOI18N
-        jButton1.setText("Pesan Makanan");
+        jButton1.setText("Pesan Tempat");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -70,7 +70,7 @@ public class MenuAwal extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        new PesanMenu().setVisible(true);
+        new PesanTempat().setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
