@@ -11,7 +11,7 @@ package aplikasiresto;
 public class MenuAwal extends javax.swing.JFrame {
 
     /**
-     * Creates new form Login
+     * Creates new form MenuAwal
      */
     public MenuAwal() {
         initComponents();

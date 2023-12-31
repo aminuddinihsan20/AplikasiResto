@@ -50,7 +50,7 @@ public class Pembayaran extends javax.swing.JFrame {
     }
     
     private void autonomor(){
-            String sql = "select max(Kode_Faktur) from pembayaran";
+            String sql = "select max(Kode_Faktur) from tb_pembayaran";
             try{
                 Statement stat = conn.createStatement();
                 ResultSet rs= stat.executeQuery(sql);
@@ -68,7 +68,7 @@ public class Pembayaran extends javax.swing.JFrame {
             Object[] baris = {"Kode Faktur","Tanggal Faktur"};
             tabmode = new DefaultTableModel(null, baris);
             tablePembayaran.setModel(tabmode);
-            String sql = "select * from pembayaran";
+            String sql = "select * from tb_pembayaran";
             try{
                 Statement stat = conn.createStatement();
                 ResultSet hasil = stat.executeQuery(sql);
@@ -237,7 +237,7 @@ public class Pembayaran extends javax.swing.JFrame {
             return;
         }
         
-        String sql = "insert into pembayaran values(?,?)";
+        String sql = "insert into tb_pembayaran values(?,?)";
         try{
             PreparedStatement stat = conn.prepareStatement(sql);
             stat.setString(1, kodeFaktur.getText());
@@ -257,7 +257,7 @@ public class Pembayaran extends javax.swing.JFrame {
 
     private void tombolUbahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tombolUbahActionPerformed
         // TODO add your handling code here:
-        String sql = "update pembayaran set Tanggal_Faktur=? where Kode_Faktur= "+kodeFaktur.getText()+"";
+        String sql = "update tb_pembayaran set Tanggal_Faktur=? where Kode_Faktur= "+kodeFaktur.getText()+"";
         
         try {
             PreparedStatement stat = conn.prepareStatement(sql);
@@ -280,7 +280,7 @@ public class Pembayaran extends javax.swing.JFrame {
         int ok = JOptionPane.showConfirmDialog(null, "Apakah ada yakin ingin menghapus data", "Konfirmasi Dialog",
             JOptionPane.YES_NO_OPTION);
         if(ok==0){
-            String sql = "delete from pembayaran where Kode_Faktur='"+kodeFaktur.getText()+"'";
+            String sql = "delete from tb_pembayaran where Kode_Faktur='"+kodeFaktur.getText()+"'";
             try {
                 PreparedStatement stat = conn.prepareStatement(sql);
                 stat.executeUpdate();

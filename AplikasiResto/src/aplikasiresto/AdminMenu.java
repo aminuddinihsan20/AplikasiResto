@@ -145,7 +145,7 @@ public class AdminMenu extends javax.swing.JFrame {
         jButton7 = new javax.swing.JButton();
         Kasir = new javax.swing.JButton();
         User = new javax.swing.JButton();
-        pembayaranBtn = new javax.swing.JButton();
+        Pembayaran = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -282,13 +282,13 @@ public class AdminMenu extends javax.swing.JFrame {
         });
         getContentPane().add(User, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 480, -1, -1));
 
-        pembayaranBtn.setText("Pembayaran");
-        pembayaranBtn.addActionListener(new java.awt.event.ActionListener() {
+        Pembayaran.setText("Pembayaran");
+        Pembayaran.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pembayaranBtnActionPerformed(evt);
+                PembayaranActionPerformed(evt);
             }
         });
-        getContentPane().add(pembayaranBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(103, 521, -1, -1));
+        getContentPane().add(Pembayaran, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 520, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -426,6 +426,12 @@ public class AdminMenu extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_UserActionPerformed
 
+    private void PembayaranActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PembayaranActionPerformed
+        // TODO add your handling code here:
+        new Pembayaran().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_PembayaranActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -463,6 +469,7 @@ public class AdminMenu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Kasir;
+    private javax.swing.JButton Pembayaran;
     private javax.swing.JButton User;
     private javax.swing.JTextField alamatAdmin;
     private javax.swing.JButton jButton1;
@@ -480,7 +487,6 @@ public class AdminMenu extends javax.swing.JFrame {
     private javax.swing.JTextField namaAdmin;
     private javax.swing.JTextField noTelpAdmin;
     private javax.swing.JTextField passAdmin;
-    private javax.swing.JButton pembayaranBtn;
     private javax.swing.JTable tableAdmin;
     private javax.swing.JButton tombolBuat;
     private javax.swing.JButton tombolHapus;
