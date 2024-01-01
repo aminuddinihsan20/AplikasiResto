@@ -43,8 +43,8 @@ public class MenuAwal extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Tw Cen MT", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Silahkan Klik Pesan Makanan Untuk Memesan");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, -1, 20));
+        jLabel2.setText("Silahkan Klik Pesan Tempat Untuk Memesan Tempat Terlebih Dahulu");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, -1, 20));
 
         jButton1.setFont(new java.awt.Font("Tw Cen MT", 1, 18)); // NOI18N
         jButton1.setText("Pesan Tempat");
