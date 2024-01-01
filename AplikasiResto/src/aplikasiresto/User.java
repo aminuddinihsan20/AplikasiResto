@@ -94,7 +94,6 @@ public class User extends javax.swing.JFrame {
         username = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         Password = new javax.swing.JTextField();
-        tombolBuat = new javax.swing.JButton();
         tombolUbah = new javax.swing.JButton();
         tombolHapus = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
@@ -150,21 +149,13 @@ public class User extends javax.swing.JFrame {
         });
         getContentPane().add(Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(103, 164, 107, -1));
 
-        tombolBuat.setText("Buat");
-        tombolBuat.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tombolBuatActionPerformed(evt);
-            }
-        });
-        getContentPane().add(tombolBuat, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 239, -1, -1));
-
         tombolUbah.setText("Ubah");
         tombolUbah.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tombolUbahActionPerformed(evt);
             }
         });
-        getContentPane().add(tombolUbah, new org.netbeans.lib.awtextra.AbsoluteConstraints(126, 239, -1, -1));
+        getContentPane().add(tombolUbah, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, -1, -1));
 
         tombolHapus.setText("Hapus");
         tombolHapus.addActionListener(new java.awt.event.ActionListener() {
@@ -172,7 +163,7 @@ public class User extends javax.swing.JFrame {
                 tombolHapusActionPerformed(evt);
             }
         });
-        getContentPane().add(tombolHapus, new org.netbeans.lib.awtextra.AbsoluteConstraints(216, 239, -1, -1));
+        getContentPane().add(tombolHapus, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, -1, -1));
 
         jButton7.setText("Logout");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
@@ -192,32 +183,6 @@ public class User extends javax.swing.JFrame {
     private void usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_usernameActionPerformed
-
-    private void tombolBuatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tombolBuatActionPerformed
-        if(username.getText().equals("")||Password.getText().equals(""))
-        {
-            JOptionPane.showMessageDialog(null, "Jangan ada data kosong !","Kesalahan", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        
-        String sql = "insert into tb_user values(?,?)";
-        try{
-            PreparedStatement stat = conn.prepareStatement(sql);
-            stat.setString(1, username.getText());
-            stat.setString(2, Password.getText());
-
-            stat.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Data Berhasil Di Tambah");
-
-            
-            datatabel();
-            perataan();
-            lebarKolom();
-
-        } catch (SQLException e){
-            JOptionPane.showMessageDialog(null, "Data Gagal Disimpan" +e);
-        }
-    }//GEN-LAST:event_tombolBuatActionPerformed
 
     private void tombolUbahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tombolUbahActionPerformed
         // TODO add your handling code here:
@@ -331,7 +296,6 @@ public class User extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tableUser;
-    private javax.swing.JButton tombolBuat;
     private javax.swing.JButton tombolHapus;
     private javax.swing.JButton tombolUbah;
     private javax.swing.JTextField username;
