@@ -145,6 +145,7 @@ public class AdminMenu extends javax.swing.JFrame {
         jButton7 = new javax.swing.JButton();
         Kasir = new javax.swing.JButton();
         Pembayaran = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -236,10 +237,10 @@ public class AdminMenu extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 439, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 410, -1, -1));
 
         jLabel5.setText("Tombol Navigasi ");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 410, -1, 20));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 380, -1, 20));
 
         jButton2.setText("Menu Makanan");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -247,7 +248,7 @@ public class AdminMenu extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 440, -1, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 410, -1, -1));
 
         jLabel6.setText("Username");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 223, -1, -1));
@@ -271,7 +272,7 @@ public class AdminMenu extends javax.swing.JFrame {
                 KasirActionPerformed(evt);
             }
         });
-        getContentPane().add(Kasir, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 480, -1, -1));
+        getContentPane().add(Kasir, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 450, -1, -1));
 
         Pembayaran.setText("Pembayaran");
         Pembayaran.addActionListener(new java.awt.event.ActionListener() {
@@ -279,7 +280,15 @@ public class AdminMenu extends javax.swing.JFrame {
                 PembayaranActionPerformed(evt);
             }
         });
-        getContentPane().add(Pembayaran, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 480, -1, -1));
+        getContentPane().add(Pembayaran, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 450, -1, -1));
+
+        jButton3.setText("Pesanan");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 490, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -417,6 +426,12 @@ public class AdminMenu extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_PembayaranActionPerformed
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        new PesanMenu().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -458,6 +473,7 @@ public class AdminMenu extends javax.swing.JFrame {
     private javax.swing.JTextField alamatAdmin;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
