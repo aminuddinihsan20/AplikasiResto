@@ -144,7 +144,6 @@ public class AdminMenu extends javax.swing.JFrame {
         passAdmin = new javax.swing.JTextField();
         jButton7 = new javax.swing.JButton();
         Kasir = new javax.swing.JButton();
-        User = new javax.swing.JButton();
         Pembayaran = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -274,21 +273,13 @@ public class AdminMenu extends javax.swing.JFrame {
         });
         getContentPane().add(Kasir, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 480, -1, -1));
 
-        User.setText("User");
-        User.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UserActionPerformed(evt);
-            }
-        });
-        getContentPane().add(User, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 480, -1, -1));
-
         Pembayaran.setText("Pembayaran");
         Pembayaran.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PembayaranActionPerformed(evt);
             }
         });
-        getContentPane().add(Pembayaran, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 520, -1, -1));
+        getContentPane().add(Pembayaran, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 480, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -420,12 +411,6 @@ public class AdminMenu extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_KasirActionPerformed
 
-    private void UserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UserActionPerformed
-        // TODO add your handling code here:
-        new User().setVisible(true);
-        dispose();
-    }//GEN-LAST:event_UserActionPerformed
-
     private void PembayaranActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PembayaranActionPerformed
         // TODO add your handling code here:
         new Pembayaran().setVisible(true);
@@ -470,7 +455,6 @@ public class AdminMenu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Kasir;
     private javax.swing.JButton Pembayaran;
-    private javax.swing.JButton User;
     private javax.swing.JTextField alamatAdmin;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;

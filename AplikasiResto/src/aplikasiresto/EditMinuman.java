@@ -364,7 +364,7 @@ public class EditMinuman extends javax.swing.JFrame {
             datatabel();
             perataan();
             lebarKolom();
-
+            autonomor();
         } catch (SQLException e){
             JOptionPane.showMessageDialog(null, "Data Gagal Disimpan" +e);
         }
@@ -445,7 +445,7 @@ public class EditMinuman extends javax.swing.JFrame {
         if(pesan==JOptionPane.YES_OPTION)
         {
             new Login().setVisible(true);
-            
+            dispose();
         }   
     }//GEN-LAST:event_jButton7ActionPerformed
 

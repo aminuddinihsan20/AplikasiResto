@@ -43,7 +43,6 @@ public class EditMakanan extends javax.swing.JFrame {
         namaMakanan.setEnabled(true);
         hargaMakanan.setEnabled(true);
         stokMakanan.setEnabled(true);
-        //jamJP.requestFocus();
  
     }
         
@@ -153,7 +152,7 @@ public class EditMakanan extends javax.swing.JFrame {
         getContentPane().add(kodeMakanan, new org.netbeans.lib.awtextra.AbsoluteConstraints(165, 83, 107, -1));
 
         jLabel5.setText("Tombol Navigasi ");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(94, 320, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 320, -1, -1));
 
         jLabel2.setText("Nama Makanan");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 126, -1, -1));
@@ -274,7 +273,7 @@ public class EditMakanan extends javax.swing.JFrame {
         if(pesan==JOptionPane.YES_OPTION)
         {
             new Login().setVisible(true);
-
+             dispose();
         }
     }//GEN-LAST:event_jButton7ActionPerformed
 

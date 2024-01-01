@@ -249,6 +249,7 @@ public class Pembayaran extends javax.swing.JFrame {
             datatabel();
             perataan();
             lebarKolom();
+            
 
         } catch (SQLException e){
             JOptionPane.showMessageDialog(null, "Data Gagal Disimpan" +e);

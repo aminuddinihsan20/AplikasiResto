@@ -36,7 +36,6 @@ public class PesanMenu extends javax.swing.JFrame {
     public PesanMenu() {
         initComponents();
         aktif();
-//        autonomor();
         datatabelMakanan();
         datatabelMinuman();
         datatabelPesan();
@@ -58,7 +57,6 @@ public class PesanMenu extends javax.swing.JFrame {
         hargaMenu.setText("");
     }
     
-
     
     protected void datatabelMakanan(){
             Object[] baris = {"Nama Makanan","Harga"};

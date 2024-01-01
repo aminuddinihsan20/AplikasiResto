@@ -41,13 +41,13 @@ public class PesanTempat extends javax.swing.JFrame {
     protected void aktif(){ 
         noMeja.setEnabled(false);
         kelasMeja.setEnabled(true);
-        ketersediaanMeja.setEnabled(true);
+        jumlahPesananMeja.setEnabled(true);
  
     }
         
     public void kosong(){
         kelasMeja.setText("");
-        ketersediaanMeja.setText("");
+        jumlahPesananMeja.setText("");
     }
     
     private void autonomor(){
@@ -66,7 +66,7 @@ public class PesanTempat extends javax.swing.JFrame {
     }
     
     protected void datatabel(){
-            Object[] baris = {"Nomor tb_Meja","Kelas Meja","Ketersediaan"};
+            Object[] baris = {"Nomor tb_Meja","Kelas Meja","Jumlah Pesanan"};
             tabmode = new DefaultTableModel(null, baris);
             tableMeja.setModel(tabmode);
             String sql = "select * from tb_meja";
@@ -76,10 +76,10 @@ public class PesanTempat extends javax.swing.JFrame {
                 while(hasil.next()){
                     String noMeja = hasil.getString("No_Meja");
                     String kelasMeja = hasil.getString("Kelas_Meja");
-                    String ketersediaanMeja = hasil.getString("Ketersediaan");
+                    String jumlahPesananMeja = hasil.getString("Jumlah_Pesanan");
 
 
-                    String[] data = {noMeja,kelasMeja,ketersediaanMeja};
+                    String[] data = {noMeja,kelasMeja,jumlahPesananMeja};
                     tabmode.addRow(data);
                 } 
             }   catch (SQLException ex) {
@@ -116,7 +116,7 @@ public class PesanTempat extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         kelasMeja = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        ketersediaanMeja = new javax.swing.JTextField();
+        jumlahPesananMeja = new javax.swing.JTextField();
         tombolBuat = new javax.swing.JButton();
         tombolUbah = new javax.swing.JButton();
         tombolHapus = new javax.swing.JButton();
@@ -129,17 +129,17 @@ public class PesanTempat extends javax.swing.JFrame {
 
         tableMeja.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Nomor Meja", "Kelas Meja"
+                "Nomor Meja", "Kelas Meja", "Jumlah Pesanan"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false
+                false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -234,7 +234,7 @@ public class PesanTempat extends javax.swing.JFrame {
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addComponent(noMeja, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
                                             .addComponent(kelasMeja)
-                                            .addComponent(ketersediaanMeja))
+                                            .addComponent(jumlahPesananMeja))
                                         .addGap(58, 58, 58))
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(tombolBuat)
@@ -274,7 +274,7 @@ public class PesanTempat extends javax.swing.JFrame {
                             .addComponent(kelasMeja, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(ketersediaanMeja, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jumlahPesananMeja, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3))
                         .addGap(73, 73, 73)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -299,16 +299,12 @@ public class PesanTempat extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void kelasMejaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kelasMejaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_kelasMejaActionPerformed
-
     private void noMejaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noMejaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_noMejaActionPerformed
 
     private void tombolBuatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tombolBuatActionPerformed
-        if(noMeja.getText().equals("")||kelasMeja.getText().equals("")||ketersediaanMeja.getText().equals(""))
+        if(noMeja.getText().equals("")||kelasMeja.getText().equals("")||jumlahPesananMeja.getText().equals(""))
         {
             JOptionPane.showMessageDialog(null, "Jangan ada data kosong !","Kesalahan", JOptionPane.ERROR_MESSAGE);
             return;
@@ -319,7 +315,7 @@ public class PesanTempat extends javax.swing.JFrame {
             PreparedStatement stat = conn.prepareStatement(sql);
             stat.setString(1, noMeja.getText());
             stat.setString(2, kelasMeja.getText());
-            stat.setString(3, ketersediaanMeja.getText());
+            stat.setString(3, jumlahPesananMeja.getText());
 
             stat.executeUpdate();
             JOptionPane.showMessageDialog(null, "Data Berhasil Di Tambah");
@@ -336,12 +332,12 @@ public class PesanTempat extends javax.swing.JFrame {
 
     private void tombolUbahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tombolUbahActionPerformed
         // TODO add your handling code here:
-        String sql = "update tb_meja set Kelas_Meja=?, Ketersediaan=? where No_Meja= "+noMeja.getText()+"";
+        String sql = "update tb_meja set Kelas_Meja=?, Jumlah_Pesanan=? where No_Meja= "+noMeja.getText()+"";
         
         try {
             PreparedStatement stat = conn.prepareStatement(sql);
             stat.setString(1, kelasMeja.getText());
-            stat.setString(2, ketersediaanMeja.getText());
+            stat.setString(2, jumlahPesananMeja.getText());
             stat.executeUpdate();
             JOptionPane.showMessageDialog(null,"Data Berhasil Diupdate");
             kosong();
@@ -388,7 +384,7 @@ public class PesanTempat extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, e);
         }
         kelasMeja.setText(tableMeja.getValueAt(tableMeja.getSelectedRow(), 1).toString());           
-        ketersediaanMeja.setText(tableMeja.getValueAt(tableMeja.getSelectedRow(), 2).toString());
+        jumlahPesananMeja.setText(tableMeja.getValueAt(tableMeja.getSelectedRow(), 2).toString());
     }//GEN-LAST:event_tableMejaMouseClicked
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
@@ -406,6 +402,10 @@ public class PesanTempat extends javax.swing.JFrame {
         new PesanMenu().setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void kelasMejaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kelasMejaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_kelasMejaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -454,8 +454,8 @@ public class PesanTempat extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField jumlahPesananMeja;
     private javax.swing.JTextField kelasMeja;
-    private javax.swing.JTextField ketersediaanMeja;
     private javax.swing.JTextField noMeja;
     private javax.swing.JTable tableMeja;
     private javax.swing.JButton tombolBuat;
