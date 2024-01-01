@@ -30,6 +30,7 @@ public class MenuAwal extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         btnlogout = new javax.swing.JButton();
+        UserEditBtn = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -62,6 +63,14 @@ public class MenuAwal extends javax.swing.JFrame {
         });
         getContentPane().add(btnlogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
+        UserEditBtn.setText("Edit akun");
+        UserEditBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UserEditBtnActionPerformed(evt);
+            }
+        });
+        getContentPane().add(UserEditBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 10, -1, -1));
+
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/menu awal.jpg"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 560));
 
@@ -78,6 +87,12 @@ public class MenuAwal extends javax.swing.JFrame {
         new Login().setVisible(true);
         dispose();
     }//GEN-LAST:event_btnlogoutActionPerformed
+
+    private void UserEditBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UserEditBtnActionPerformed
+        // TODO add your handling code here:
+        new User().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_UserEditBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -118,6 +133,7 @@ public class MenuAwal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton UserEditBtn;
     private javax.swing.JButton btnlogout;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
